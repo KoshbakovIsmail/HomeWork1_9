@@ -14,7 +14,6 @@ public class Main {
         test2(totalSum, numberDay, maxSum, minSum, arr);
         test3(totalSum, arr, numberDay, averageSum);
         test4(reverseFullName);
-
     }
 
     public static int[] generateRandomArry() {
