@@ -26,7 +26,6 @@ public class Main {
         return arr;
 
     }
-
     public static void test1(int totalSum, int numberDay, int[] arr) {
         System.out.println("           Задача№1");
         System.out.println(Arrays.toString(arr));
