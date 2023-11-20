@@ -1,45 +1,37 @@
 import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
         int[] arr = generateRandomArry();
-        int totalSum = 0;
-        int numberDay = 30;
-        int maxSum = arr[0];
-        int minSum = arr[0];
-        double averageSum = arr[0];
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
 
-        test1(totalSum, numberDay, arr);
-        test2(totalSum, numberDay, maxSum, minSum, arr);
-        test3(totalSum, arr, numberDay, averageSum);
+        test1(arr);
+        test2(arr);
+        test3(arr);
         test4(reverseFullName);
     }
-
     public static int[] generateRandomArry() {
         java.util.Random random = new java.util.Random();
         int[] arr = new int[30];
         for (int i = 0; i < arr.length; i++) {
             arr[i] = random.nextInt(100_000) + 100_000;
-
         }
         return arr;
-
     }
-    public static void test1(int totalSum, int numberDay, int[] arr) {
+    public static void test1(int[] arr) {
         System.out.println("           Задача№1");
-        System.out.println(Arrays.toString(arr));
-        for (int day = 1; day <= numberDay; day++) {
+        int totalSum = 0;
+        for (int day = 1; day <= arr.length; day++) {
             System.out.println("День №" + day + " - " + arr[day - 1]);
             totalSum += arr[day - 1];
         }
         System.out.println("Сумма трат за 30 дней Итого - " + totalSum);
     }
-
-    public static void test2(int totalSum, int numberDay, int maxSum, int minSum, int[] arr) {
+    public static void test2(int[] arr) {
         System.out.println("           Задача№2");
-        System.out.println(Arrays.toString(arr));
-        for (int payments = 1; payments <= numberDay; payments++) {
+        int totalSum = 0;
+        int maxSum = arr[0];
+        int minSum = arr[0];
+        for (int payments = 1; payments <= arr.length; payments++) {
             System.out.println("Выплата №" + payments + " - " + arr[payments - 1]);
             totalSum += arr[payments - 1];
         }
@@ -57,12 +49,12 @@ public class Main {
         }
         System.out.println("Минимальная сумма выплаты за день - " + minSum);
     }
-
-    public static void test3(int totalSum, int[] arr, int numberDay, double averageSum) {
+    public static void test3(int[] arr) {
         System.out.println("           Задача№3");
-        System.out.println(Arrays.toString(arr));
+        int totalSum = 0;
+        double averageSum = 0;
 
-        for (int day = 1; day <= numberDay; day++) {
+        for (int day = 1; day <= arr.length; day++) {
             System.out.println("день №" + day + " - " + arr[day - 1]);
             totalSum += arr[day - 1];
         }
@@ -71,7 +63,6 @@ public class Main {
         String numberFormat = String.format("%.2f", averageSum);
         System.out.println("Средная сумма трат за месяц - " + numberFormat);
     }
-
     public static void test4(char[] reverseFullName) {
         System.out.println("           Задача№4");
         System.out.println(Arrays.toString(reverseFullName) + " Ошибка!");
@@ -79,7 +70,6 @@ public class Main {
             System.out.print(reverseFullName[i]);
         }
     }
-
 }
 
 
